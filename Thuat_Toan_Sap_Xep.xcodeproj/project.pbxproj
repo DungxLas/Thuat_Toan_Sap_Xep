@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		74038DAF27F7F9CA000F98EC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74038DA227F7EB2C000F98EC /* main.cpp */; };
+		74061C7C27F982F300DB399E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74038DA227F7EB2C000F98EC /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,8 +26,7 @@
 		74038D9F27F7EB2C000F98EC /* Thuat_Toan_Sap_Xep */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Thuat_Toan_Sap_Xep; sourceTree = BUILT_PRODUCTS_DIR; };
 		74038DA227F7EB2C000F98EC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		74038DAA27F7EBFF000F98EC /* Phat_Sinh_Day_So.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Phat_Sinh_Day_So.cpp; sourceTree = "<group>"; };
-		74038DAC27F7ECE2000F98EC /* Selection_Sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Selection_Sort.h; sourceTree = "<group>"; };
-		74038DAE27F7F7B8000F98EC /* InterChange_Sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterChange_Sort.h; sourceTree = "<group>"; };
+		74061C7D27F99C3300DB399E /* Sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sort.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,8 +43,7 @@
 		74038D9627F7EB2B000F98EC = {
 			isa = PBXGroup;
 			children = (
-				74038DAE27F7F7B8000F98EC /* InterChange_Sort.h */,
-				74038DAC27F7ECE2000F98EC /* Selection_Sort.h */,
+				74061C7D27F99C3300DB399E /* Sort.h */,
 				74038DA127F7EB2C000F98EC /* Thuat_Toan_Sap_Xep */,
 				74038DA027F7EB2C000F98EC /* Products */,
 			);
@@ -125,7 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74038DAF27F7F9CA000F98EC /* main.cpp in Sources */,
+				74061C7C27F982F300DB399E /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

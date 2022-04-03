@@ -33,8 +33,7 @@ int main()
     PhatSinhDaySo(100, -100, 100);
     PhatSinhDaySo(1000, -100, 100);
     PhatSinhDaySo(10000, -100, 100);
+    PhatSinhDaySo(50000, -100, 100);
     PhatSinhDaySo(100000, -100, 100);
-    PhatSinhDaySo(1000000, -100, 100);
-    //PhatSinhDaySo(10000000, -100, 100);
     return 0;
 }

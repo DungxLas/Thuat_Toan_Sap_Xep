@@ -1,12 +1,12 @@
 //
-//  Selection_Sort.h
+//  Sort.h
 //  Thuat_Toan_Sap_Xep
 //
-//  Created by PHẠM HÙNG DŨNG on 02/04/2022.
+//  Created by PHẠM HÙNG DŨNG on 03/04/2022.
 //
 
-#ifndef Selection_Sort_h
-#define Selection_Sort_h
+#ifndef Sort_h
+#define Sort_h
 
 #include <iostream>
 #include <algorithm>
@@ -30,4 +30,16 @@ void SelectionSort(T *m, int n, bool kieusapxep = true)
     }
 }
 
-#endif /* Selection_Sort_h */
+// kieusapxep là true: tăng - false: giảm
+template <class T>
+void InterchangeSort(T *m, int n, bool kieusapxep = true) {
+    for (int i = 0; i < n -1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (m[i] < m[j] == kieusapxep) {
+                swap(m[i], m[j]);
+            }
+        }
+    }
+}
+
+#endif /* Sort_h */
