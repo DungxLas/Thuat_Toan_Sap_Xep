@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		74061C7C27F982F300DB399E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74038DA227F7EB2C000F98EC /* main.cpp */; };
+		741FE72A27FDE1EC004BE49B /* SoSanh_Sort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 741FE72227FDCD1B004BE49B /* SoSanh_Sort.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,9 +24,10 @@
 
 /* Begin PBXFileReference section */
 		74038D9F27F7EB2C000F98EC /* Thuat_Toan_Sap_Xep */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Thuat_Toan_Sap_Xep; sourceTree = BUILT_PRODUCTS_DIR; };
-		74038DA227F7EB2C000F98EC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		74038DAA27F7EBFF000F98EC /* Phat_Sinh_Day_So.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Phat_Sinh_Day_So.cpp; sourceTree = "<group>"; };
 		74061C7D27F99C3300DB399E /* Sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sort.h; sourceTree = "<group>"; };
+		741FE72227FDCD1B004BE49B /* SoSanh_Sort.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SoSanh_Sort.cpp; sourceTree = "<group>"; };
+		741FE72427FDCD5A004BE49B /* Test_Sort.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Test_Sort.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +61,9 @@
 		74038DA127F7EB2C000F98EC /* Thuat_Toan_Sap_Xep */ = {
 			isa = PBXGroup;
 			children = (
-				74038DA227F7EB2C000F98EC /* main.cpp */,
+				741FE72227FDCD1B004BE49B /* SoSanh_Sort.cpp */,
 				74038DAA27F7EBFF000F98EC /* Phat_Sinh_Day_So.cpp */,
+				741FE72427FDCD5A004BE49B /* Test_Sort.cpp */,
 			);
 			path = Thuat_Toan_Sap_Xep;
 			sourceTree = "<group>";
@@ -123,7 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74061C7C27F982F300DB399E /* main.cpp in Sources */,
+				741FE72A27FDE1EC004BE49B /* SoSanh_Sort.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

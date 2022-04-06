@@ -11,9 +11,9 @@
 #include <iostream>
 #include <algorithm>
 
-// kieusapxep là true: tăng - false: giảm
+// SelectionSort
 template <class T>
-void SelectionSort(T *m, int n, bool kieusapxep = true)
+void SelectionSort(T *m, int n, bool kieusapxep = true) // kieusapxep là true: tăng - false: giảm
 {
     for(int i = 0; i < n - 1; ++i) // Vị trí dãy hiện hành để tìm Min bắt đầu từ i
     {
@@ -30,9 +30,9 @@ void SelectionSort(T *m, int n, bool kieusapxep = true)
     }
 }
 
-// kieusapxep là true: tăng - false: giảm
+// InterchangeSort
 template <class T>
-void InterchangeSort(T *m, int n, bool kieusapxep = true) {
+void InterchangeSort(T *m, int n, bool kieusapxep = true) { // kieusapxep là true: tăng - false: giảm
     for (int i = 0; i < n -1; i++) {
         for (int j = i + 1; j < n; j++) {
             if (m[i] < m[j] == kieusapxep) {
@@ -42,4 +42,32 @@ void InterchangeSort(T *m, int n, bool kieusapxep = true) {
     }
 }
 
+// BubbleSort
+    //Thuong
+template <class T>
+void BubbleSort(T *m, int n, bool kieusapxep = true) { // kieusapxep là true: tăng - false: giảm
+    for (int j = 0; j < n - 1; j++) {
+        for (int i = n - 1; i > j; i--) {
+            if (m[i - 1] > m[i] == kieusapxep) {
+                swap(m[i - 1], m[i]);
+            }
+        }
+    }
+}
+    //Cai tien
+template <class T>
+void BubbleSort_CaiTien(T *m, int n, bool kieusapxep = true) { // kieusapxep là true: tăng - false: giảm
+    for (int j = 0; j < n - 1; j++) {
+        bool check = true;
+        for (int i = n - 1; i > j; i--) {
+            if (m[i - 1] > m[i] == kieusapxep) {
+                check = false;
+                swap(m[i - 1], m[i]);
+            }
+        }
+        if (check == true) {
+            break;
+        }
+    }
+}
 #endif /* Sort_h */

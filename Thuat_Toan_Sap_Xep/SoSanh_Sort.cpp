@@ -41,9 +41,12 @@ int main()
     vector<string> ThuatToan;
     ThuatToan.push_back("Selection Sort");
     ThuatToan.push_back("Interchange Sort");
+    ThuatToan.push_back("Bubble Sort");
+    ThuatToan.push_back("Bubble Sort Cai Tien");
     int size_ThuatToan = ThuatToan.size();
     
     vector<int> TapDuLieu;
+    TapDuLieu.push_back(10);
     TapDuLieu.push_back(100);
     TapDuLieu.push_back(1000);
     TapDuLieu.push_back(10000);
@@ -56,7 +59,7 @@ int main()
     double KetQuaTB[size_TapDuLieu][size_ThuatToan];
     
     fstream f;
-    f.open("/Users/phamhungdung/CoDe/C:C++/Thuat_Toan_Sap_Xep/KetQua.txt", ios::out);
+    f.open("/Users/phamhungdung/CoDe/C:C++/Thuat_Toan_Sap_Xep/KetQuaSoSanh.txt", ios::out);
     
     for (int i = 0; i < size_ThuatToan; i++) {
         
@@ -81,6 +84,12 @@ int main()
                             break;
                         case 1:
                             InterchangeSort(a, TapDuLieu[j]);
+                            break;
+                        case 2:
+                            BubbleSort(a, TapDuLieu[j]);
+                            break;
+                        case 3:
+                            BubbleSort_CaiTien(a, TapDuLieu[j]);
                             break;
                     }
                     clock_t end = clock();

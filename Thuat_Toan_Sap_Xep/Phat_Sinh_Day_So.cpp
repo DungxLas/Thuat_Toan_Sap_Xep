@@ -30,6 +30,7 @@ static void PhatSinhDaySo(int n, int a, int b) {
 
 int main()
 {
+    PhatSinhDaySo(10, -100, 100);
     PhatSinhDaySo(100, -100, 100);
     PhatSinhDaySo(1000, -100, 100);
     PhatSinhDaySo(10000, -100, 100);
