@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		741FE72A27FDE1EC004BE49B /* SoSanh_Sort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 741FE72227FDCD1B004BE49B /* SoSanh_Sort.cpp */; };
+		74CDAAFD28080F1700CAF4CD /* Su_Dung_DeQuy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74CDAAFC28080F1700CAF4CD /* Su_Dung_DeQuy.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +28,7 @@
 		74061C7D27F99C3300DB399E /* Sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sort.h; sourceTree = "<group>"; };
 		741FE72227FDCD1B004BE49B /* SoSanh_Sort.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SoSanh_Sort.cpp; sourceTree = "<group>"; };
 		741FE72427FDCD5A004BE49B /* Test_Sort.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Test_Sort.cpp; sourceTree = "<group>"; };
+		74CDAAFC28080F1700CAF4CD /* Su_Dung_DeQuy.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Su_Dung_DeQuy.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +65,7 @@
 				741FE72227FDCD1B004BE49B /* SoSanh_Sort.cpp */,
 				74038DAA27F7EBFF000F98EC /* Phat_Sinh_Day_So.cpp */,
 				741FE72427FDCD5A004BE49B /* Test_Sort.cpp */,
+				74CDAAFC28080F1700CAF4CD /* Su_Dung_DeQuy.cpp */,
 			);
 			path = Thuat_Toan_Sap_Xep;
 			sourceTree = "<group>";
@@ -125,7 +127,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				741FE72A27FDE1EC004BE49B /* SoSanh_Sort.cpp in Sources */,
+				74CDAAFD28080F1700CAF4CD /* Su_Dung_DeQuy.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
