@@ -30,9 +30,9 @@ void SelectionSort(T *m, int n, bool kieusapxep = true) // kieusapxep là true: 
     }
 }
 
-// SelectionSort_DeQuy
+// SelectionSort_DeQuy_vs_Lap
 template <class T>
-void SelectionSort_DeQuy(T *m, int n, bool kieusapxep = true) // kieusapxep là true: tăng - false: giảm
+void SelectionSort_DeQuy_vs_Lap(T *m, int n, bool kieusapxep = true) // kieusapxep là true: tăng - false: giảm
 {
     if (n == 1) {
         return;
@@ -47,7 +47,52 @@ void SelectionSort_DeQuy(T *m, int n, bool kieusapxep = true) // kieusapxep là 
     }
     swap(m[vitriMax], m[n - 1]);
     
-    SelectionSort_DeQuy(m, n - 1, kieusapxep);
+    SelectionSort_DeQuy_vs_Lap(m, n - 1, kieusapxep);
+}
+
+// SelectionSort_2DeQuy
+template <class T>
+void TimViTriLonNhat(T *m, int n, int &vitriMax, bool kieusapxep)
+{
+    if (n == 1) {
+        return;
+    }
+    if (m[n-1] > m[vitriMax] == kieusapxep) {
+        vitriMax = n - 1;
+    }
+    TimViTriLonNhat(m, n - 1, vitriMax, kieusapxep);
+}
+
+template <class T>
+void SelectionSort_2DeQuy(T *m, int n, bool kieusapxep = true) // kieusapxep là true: tăng - false: giảm
+{
+    if (n == 1) {
+        return;
+    }
+    int vitriMax = 0;
+    TimViTriLonNhat(m, n, vitriMax, kieusapxep);
+    swap(m[vitriMax], m[n - 1]);
+    
+    SelectionSort_2DeQuy(m, n - 1, kieusapxep);
+}
+
+// SelectionSort_1DeQuy
+template <class T>
+void SelectionSort_1DeQuy(T *m, int n1, int n2, bool kieusapxep = true, int vitriMax = 0) // kieusapxep là true: tăng - false: giảm
+{
+    if (n1 == 1) {
+        n1 = n2;
+        swap(m[vitriMax], m[n1 - 1]);
+        n1 = n2 = --n2;
+        vitriMax = 0;
+    }
+    if (n2 == 1) {
+        return;
+    }
+    if (m[n1-1] > m[vitriMax] == kieusapxep) {
+        vitriMax = n1 - 1;
+    }
+    SelectionSort_1DeQuy(m, n1 - 1, n2, kieusapxep, vitriMax);
 }
 
 // InterchangeSort
