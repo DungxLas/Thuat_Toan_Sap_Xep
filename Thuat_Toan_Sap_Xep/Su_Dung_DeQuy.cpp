@@ -41,6 +41,7 @@ int main() {
     cout << "\nDay so phat sinh trong tu 0 toi 10 la: ";
     
     m = new int[n];
+    srand(time(0));
     for (int i = 0; i < n; i++) {
         m[i] = rand() % (10 - 0 + 1) + 0;
         cout << m[i] << "   ";
@@ -48,7 +49,8 @@ int main() {
     
     //SelectionSort_DeQuy(m, n);
     //InterchangeSort_DeQuy(m, n);
-    BubbleSort_DeQuy(m, n);
+    //BubbleSort_DeQuy(m, n);
+    SelectionSort_1DeQuy(m, n, n);
     cout << "\nDay sau khi sap xep tang: ";
     for (int i = 0; i < n; i++) {
         cout << m[i] << "   ";
@@ -56,7 +58,8 @@ int main() {
     
     //SelectionSort_DeQuy(m, n, false);
     //InterchangeSort_DeQuy(m, n, false);
-    BubbleSort_DeQuy(m, n, false);
+    //BubbleSort_DeQuy(m, n, false);
+    SelectionSort_1DeQuy(m, n, n, false);
     cout << "\nDay sau khi sap xep giam: ";
     for (int i = 0; i < n; i++) {
         cout << m[i] << "   ";

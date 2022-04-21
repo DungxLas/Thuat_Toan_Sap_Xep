@@ -17,7 +17,7 @@ static void PhatSinhDaySo(int n, int a, int b) {
     f.open("/Users/phamhungdung/CoDe/C:C++/Thuat_Toan_Sap_Xep/" + tentaptin + ".txt", ios::out);
     
     int res;
-    //srand(time(0));
+    srand(time(0));
     for (int i = 0; i < n; i++) {
         res = rand() % (b - a + 1) + a;
         //cout << res << "    ";
