@@ -169,4 +169,58 @@ void BubbleSort_DeQuy(T *m, int n, bool kieusapxep = true) { // kieusapxep là t
     BubbleSort_DeQuy(m, n - 1, kieusapxep);
 }
 
+// ShakerSort
+template <class T>
+void ShakerSort(T *m, int n, bool kieusapxep = true) { // kieusapxep là true: tăng - false: giảm
+    int left = 0;
+    int right = n - 1;
+    int k = 0;
+    while (left < right) {
+        int temp_k = k;
+        for (int i = right; i > left; i--) {
+            if (m[i - 1] > m[i] == kieusapxep) {
+                swap(m[i - 1], m[i]);
+                k = i;
+            }
+        }
+        if (temp_k == k) {
+            break;
+        }
+        left = k;
+        
+        for (int i = left; i < right; i++) {
+            if (m[i] > m[i + 1] == kieusapxep) {
+                swap(m[i], m[i + 1]);
+                k = i;
+            }
+        }
+        right = k;
+    }
+}
+
+// ShakerSort_CaiTien
+template <class T>
+void ShakerSort_CaiTien(T *m, int n, bool kieusapxep = true) { // kieusapxep là true: tăng - false: giảm
+    int a = 0;
+    int b = n - 1;
+    bool check = true;
+    while (true) {
+        for (int i = a; i < b; i++) {
+            if (m[i] > m[i + 1] == kieusapxep) {
+                swap(m[i], m[i + 1]);
+            }
+        }
+        if (check == true) {
+            b--;
+            check = false;
+        } else {
+            a++;
+            check = true;
+        }
+        if (a == b) {
+            break;
+        }
+    }
+}
+
 #endif /* Sort_h */

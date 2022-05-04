@@ -40,7 +40,7 @@ int main()
 {
     int *m;
     int n;
-    string ThuatToan = "Bubble Sort";
+    string ThuatToan = "Shaker Sort";
     
     cout << "\t\t\t\t\t\t" << ThuatToan;
     cout << "\nNhap ten tap can sap xep: tap";
@@ -59,7 +59,8 @@ int main()
         f << m[i] << "  ";
     }
     
-    BubbleSort_CaiTien(m, n);
+    //ShakerSort(m, n);
+    ShakerSort(m, n);
     f << "\n\tSau khi sap xep: ";
     f << "\n\t";
     for (int i = 0; i < n; i++) {
