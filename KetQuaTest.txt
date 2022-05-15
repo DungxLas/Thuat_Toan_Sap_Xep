@@ -1,4 +1,4 @@
-						Shaker Sort
+						Sort
 
 	Truoc khi sap xep: 
 	66  49  38  53  100  -65  28  -5  -11  56  

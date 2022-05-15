@@ -11,6 +11,8 @@
 #include <iostream>
 #include <algorithm>
 
+#include "/Users/phamhungdung/CoDe/C:C++/Thuat_Toan_Sap_Xep/Tool.h"
+
 // SelectionSort
 template <class T>
 void SelectionSort(T *m, int n, bool kieusapxep = true) // kieusapxep là true: tăng - false: giảm
@@ -219,6 +221,50 @@ void ShakerSort_CaiTien(T *m, int n, bool kieusapxep = true) { // kieusapxep là
         }
         if (a == b) {
             break;
+        }
+    }
+}
+
+// InsertSort
+
+template <class T>
+void InsertionSort(T *m, int n) //Sap xep tang //Vs mang 1 chieu
+{
+    for (int i = 1; i < n; i++) {
+        bool check = true;
+        if (m[i] > m[i - 1]) {
+            continue;
+        }
+        for (int j = i - 2; j >= 0; j--) {
+            if (m[i] > m[j]) {
+                Insert(m, j + 1, i);
+                check = false;
+                break;
+            }
+        }
+        if (check == true) {
+            Insert(m, 0, i);
+        }
+    }
+}
+
+template <class T>
+void InsertionSort_Linked(T *m, int n) //Sap xep tang //Vs danh sach lien ket
+{
+    for (int i = 1; i < n; i++) {
+        bool check = true;
+        if (m[i] > m[i - 1]) {
+            continue;
+        }
+        for (int j = i - 2; j >= 0; j--) {
+            if (m[i] > m[j]) {
+                Insert(m, j + 1, i);
+                check = false;
+                break;
+            }
+        }
+        if (check == true) {
+            Insert(m, 0, i);
         }
     }
 }
