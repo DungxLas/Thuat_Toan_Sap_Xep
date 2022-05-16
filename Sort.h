@@ -226,30 +226,8 @@ void ShakerSort_CaiTien(T *m, int n, bool kieusapxep = true) { // kieusapxep là
 }
 
 // InsertSort
-
 template <class T>
 void InsertionSort(T *m, int n) //Sap xep tang //Vs mang 1 chieu
-{
-    for (int i = 1; i < n; i++) {
-        bool check = true;
-        if (m[i] > m[i - 1]) {
-            continue;
-        }
-        for (int j = i - 2; j >= 0; j--) {
-            if (m[i] > m[j]) {
-                Insert(m, j + 1, i);
-                check = false;
-                break;
-            }
-        }
-        if (check == true) {
-            Insert(m, 0, i);
-        }
-    }
-}
-
-template <class T>
-void InsertionSort_Linked(T *m, int n) //Sap xep tang //Vs danh sach lien ket
 {
     for (int i = 1; i < n; i++) {
         bool check = true;
