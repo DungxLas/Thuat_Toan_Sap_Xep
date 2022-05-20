@@ -11,7 +11,15 @@
 #include <iostream>
 #include <algorithm>
 
-#include "/Users/phamhungdung/CoDe/C:C++/Thuat_Toan_Sap_Xep/Tool.h"
+using namespace std;
+
+template <class T>
+void xuatMang(T *arr, int n)
+{
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << "    ";
+    }
+}
 
 // SelectionSort
 template <class T>
@@ -227,24 +235,94 @@ void ShakerSort_CaiTien(T *m, int n, bool kieusapxep = true) { // kieusapxep là
 
 // InsertSort
 template <class T>
-void InsertionSort(T *m, int n) //Sap xep tang //Vs mang 1 chieu
+void InsertionSort1(T *m, int n, bool kieusapxep = true) //Sap xep tang //Vs mang 1 chieu
 {
     for (int i = 1; i < n; i++) {
-        bool check = true;
-        if (m[i] > m[i - 1]) {
-            continue;
-        }
-        for (int j = i - 2; j >= 0; j--) {
-            if (m[i] > m[j]) {
-                Insert(m, j + 1, i);
-                check = false;
+        T x = m[i];
+        bool check = false;
+        
+        for (int j = i - 1; j >= 0; j--) {
+            if (x < m[j] == kieusapxep) {
+                m[j + 1] = m[j]; //m[j] nhich qua ben phai 1 o
+            }
+            else {
+                m[j + 1] = x;
+                check = true;
                 break;
             }
         }
-        if (check == true) {
-            Insert(m, 0, i);
+        if (check == false) {
+            m[0] = x;
         }
     }
 }
+
+template <class T>
+void InsertionSort2(T *m, int n, bool kieusapxep = true) //Sap xep tang //Vs mang 1 chieu
+{
+    for (int i = 1; i < n; i++) {
+        T x = m[i];
+        
+        int j = i - 1;
+        while (j >= 0 && (x < m[j] == kieusapxep)) {
+            m[j + 1] = m[j];
+            j--;
+        }
+        m[j + 1] = x;
+    }
+}
+
+//Chi kiem tra sap xep tang
+//Khoang radom so luong phan tu n ||nMin -> nMax||
+template <class T>
+void toolTestSort(void (*thuatToanSapxep)(T*, int, bool), int soTestCase, int nMin, int nMax, T resMin, T resMax)
+{
+    srand(time(NULL));
+    for (int k = 0; k < soTestCase; ++k) {
+        //Tao day so ngau nhien voi so luong n ngau nhien trong khoang nMin->nMax
+         int n = rand() % (nMax - nMin + 1) + nMin;
+         cout << "\nTest case[" << k <<"] (n = " << n << ")";
+         
+         //int n = 10;
+         T *res = new T[n];
+         //cout << "\nMang ban dau: ";
+         for (int i = 0; i < n; i++) {
+             res[i] = rand() % (resMax - resMin + 1) + resMin;
+             //cout << res[i] << "    ";
+         }
+         
+         T *ketquachinhxac = new T[n];
+         for (int i = 0; i < n; i++) {
+             ketquachinhxac[i] = res[i];
+         }
+         
+         thuatToanSapxep(res, n, true);
+         sort(ketquachinhxac, ketquachinhxac + n);
+         
+         //So Sanh Ket Qua
+         bool check = true;
+         for (int i = 0; i < n; ++i) {
+             if (res[i] != ketquachinhxac[i]) {
+                 check = false;
+                 cout << "\nTest case sai o index: " << i << endl;
+                 break;
+             }
+         }
+         if (check == false) {
+             cout << "\nMang ban dau: ";
+             xuatMang(res, n);
+             cout << "\nKet qua chinh xac sap tang: ";
+             xuatMang(ketquachinhxac, n);
+             cout << "\nTest case[" << k << "] khong pass" << endl;
+             break;
+         } else {
+             cout << " => Pass test case" << endl;
+         }
+         
+         delete [] res;
+         delete [] ketquachinhxac;
+    }
+}
+
 
 #endif /* Sort_h */
