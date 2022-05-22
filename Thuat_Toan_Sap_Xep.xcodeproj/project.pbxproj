@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		74B1D1572833E22B007BDB76 /* Test_Sort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74B1D1562833E22B007BDB76 /* Test_Sort.cpp */; };
+		74A63886283A7A31002B242A /* Test_Sort_Linked.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 743735592830AD0100CCCB7F /* Test_Sort_Linked.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,9 +28,10 @@
 		74061C7D27F99C3300DB399E /* Sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sort.h; sourceTree = "<group>"; };
 		741FE72227FDCD1B004BE49B /* SoSanh_Sort.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SoSanh_Sort.cpp; sourceTree = "<group>"; };
 		741FE72427FDCD5A004BE49B /* Test_Sort_TapTin.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Test_Sort_TapTin.cpp; sourceTree = "<group>"; };
-		7437355728309FB800CCCB7F /* Test_Sort_Array.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Test_Sort_Array.cpp; sourceTree = "<group>"; };
 		743735592830AD0100CCCB7F /* Test_Sort_Linked.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Test_Sort_Linked.cpp; sourceTree = "<group>"; };
-		74B1D1562833E22B007BDB76 /* Test_Sort.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Test_Sort.cpp; sourceTree = "<group>"; };
+		74A63882283A77CD002B242A /* Test_Sort_Array.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Test_Sort_Array.cpp; sourceTree = "<group>"; };
+		74A63884283A7850002B242A /* Tool_Test_Sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tool_Test_Sort.h; sourceTree = "<group>"; };
+		74A63885283A7A1F002B242A /* Linked_sample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Linked_sample.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +48,8 @@
 		74038D9627F7EB2B000F98EC = {
 			isa = PBXGroup;
 			children = (
+				74A63885283A7A1F002B242A /* Linked_sample.h */,
+				74A63884283A7850002B242A /* Tool_Test_Sort.h */,
 				74061C7D27F99C3300DB399E /* Sort.h */,
 				74038DA127F7EB2C000F98EC /* Thuat_Toan_Sap_Xep */,
 				74038DA027F7EB2C000F98EC /* Products */,
@@ -64,11 +67,10 @@
 		74038DA127F7EB2C000F98EC /* Thuat_Toan_Sap_Xep */ = {
 			isa = PBXGroup;
 			children = (
-				74B1D1562833E22B007BDB76 /* Test_Sort.cpp */,
+				74A63882283A77CD002B242A /* Test_Sort_Array.cpp */,
 				741FE72227FDCD1B004BE49B /* SoSanh_Sort.cpp */,
 				74038DAA27F7EBFF000F98EC /* Phat_Sinh_Day_So.cpp */,
 				741FE72427FDCD5A004BE49B /* Test_Sort_TapTin.cpp */,
-				7437355728309FB800CCCB7F /* Test_Sort_Array.cpp */,
 				743735592830AD0100CCCB7F /* Test_Sort_Linked.cpp */,
 			);
 			path = Thuat_Toan_Sap_Xep;
@@ -131,7 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74B1D1572833E22B007BDB76 /* Test_Sort.cpp in Sources */,
+				74A63886283A7A31002B242A /* Test_Sort_Linked.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,16 +11,6 @@
 #include <iostream>
 #include <algorithm>
 
-using namespace std;
-
-template <class T>
-void xuatMang(T *arr, int n)
-{
-    for (int i = 0; i < n; i++) {
-        cout << arr[i] << "    ";
-    }
-}
-
 // SelectionSort
 template <class T>
 void SelectionSort(T *m, int n, bool kieusapxep = true) // kieusapxep là true: tăng - false: giảm
@@ -271,58 +261,5 @@ void InsertionSort2(T *m, int n, bool kieusapxep = true) //Sap xep tang //Vs man
         m[j + 1] = x;
     }
 }
-
-//Chi kiem tra sap xep tang
-//Khoang radom so luong phan tu n ||nMin -> nMax||
-template <class T>
-void toolTestSort(void (*thuatToanSapxep)(T*, int, bool), int soTestCase, int nMin, int nMax, T resMin, T resMax)
-{
-    srand(time(NULL));
-    for (int k = 0; k < soTestCase; ++k) {
-        //Tao day so ngau nhien voi so luong n ngau nhien trong khoang nMin->nMax
-         int n = rand() % (nMax - nMin + 1) + nMin;
-         cout << "\nTest case[" << k <<"] (n = " << n << ")";
-         
-         //int n = 10;
-         T *res = new T[n];
-         //cout << "\nMang ban dau: ";
-         for (int i = 0; i < n; i++) {
-             res[i] = rand() % (resMax - resMin + 1) + resMin;
-             //cout << res[i] << "    ";
-         }
-         
-         T *ketquachinhxac = new T[n];
-         for (int i = 0; i < n; i++) {
-             ketquachinhxac[i] = res[i];
-         }
-         
-         thuatToanSapxep(res, n, true);
-         sort(ketquachinhxac, ketquachinhxac + n);
-         
-         //So Sanh Ket Qua
-         bool check = true;
-         for (int i = 0; i < n; ++i) {
-             if (res[i] != ketquachinhxac[i]) {
-                 check = false;
-                 cout << "\nTest case sai o index: " << i << endl;
-                 break;
-             }
-         }
-         if (check == false) {
-             cout << "\nMang ban dau: ";
-             xuatMang(res, n);
-             cout << "\nKet qua chinh xac sap tang: ";
-             xuatMang(ketquachinhxac, n);
-             cout << "\nTest case[" << k << "] khong pass" << endl;
-             break;
-         } else {
-             cout << " => Pass test case" << endl;
-         }
-         
-         delete [] res;
-         delete [] ketquachinhxac;
-    }
-}
-
 
 #endif /* Sort_h */
