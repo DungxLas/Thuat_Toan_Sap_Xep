@@ -10,6 +10,10 @@
 
 #include <iostream>
 #include <algorithm>
+using namespace std;
+
+
+#include "/Users/phamhungdung/CoDe/C:C++/Thuat_Toan_Sap_Xep/Linked_sample.h"
 
 // SelectionSort
 template <class T>
@@ -259,6 +263,45 @@ void InsertionSort2(T *m, int n, bool kieusapxep = true) //Sap xep tang //Vs man
             j--;
         }
         m[j + 1] = x;
+    }
+}
+
+//Sap xep tang
+void InsertionSort_Double_Linked(LIST_double l, bool saptang = true) //true la tang //Vs danh sach lien ket doi
+{
+    for (node_double *i = l.pHead->pNext; i != NULL; i = i->pNext) { //Duyet tu vi tri ngay sau pHead den ngay truoc pTail
+        int x = i->data;
+        
+        node_double *j = i->pRev;
+        while (j != NULL && (saptang == true ? x < j->data : x > j->data)) {
+            j->pNext->data = j->data;
+            j = j->pRev;
+        }
+        if (j != NULL) {
+            j->pNext->data = x;
+        } else {
+            l.pHead->data = x;
+        }
+    }
+}
+
+void InsertionSort_Single_Linked(LIST_single l, bool saptang = true) //Sap xep tang //Vs danh sach lien ket don
+{
+    for (node_single *i = l.pHead->pNext; i != NULL; i = i->pNext) { //Duyet tu vi tri ngay sau pHead den ngay truoc pTail
+        int x = i->data;
+        
+        for (node_single *j = l.pHead; j != i; j = j->pNext) {
+            if (x <= j->data) {
+                int y = j->data;
+                for (node_single *k = j->pNext; k != i->pNext; k = k->pNext) {
+                    int z = k->data;
+                    k->data = y;
+                    y = z;
+                }
+                j->data = x;
+                break;
+            }
+        }
     }
 }
 
