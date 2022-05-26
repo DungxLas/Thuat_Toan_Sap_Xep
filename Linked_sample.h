@@ -16,7 +16,7 @@ struct node_double
 {
     int data;
     node_double *pNext;
-    node_double *pRev;
+    node_double *pPrev;
 };
 
 struct node_single
@@ -58,7 +58,7 @@ node_double* getNode_double(int data)
     }
     p->data = data;
     p->pNext = NULL;
-    p->pRev = NULL;
+    p->pPrev = NULL;
     
     return p;
 }
@@ -86,7 +86,7 @@ void addHead_double(LIST_double &l, node_double *p)
     else
     {
         p->pNext = l.pHead;
-        l.pHead->pRev = p;
+        l.pHead->pPrev = p;
         l.pHead = p;
     }
 }
@@ -99,7 +99,7 @@ void addTail_double(LIST_double &l, node_double *p)
     else
     {
         l.pTail->pNext = p;
-        p->pRev = l.pTail;
+        p->pPrev = l.pTail;
         l.pTail = p;
     }
 }
@@ -184,6 +184,62 @@ void outPut_single(LIST_single l)
 }
 
 // Bước 6: Các thao tác
+    // Tach node trong danh sach
+void tachNode_double(LIST_double &l, node_double *p)
+{
+    if (l.pHead == NULL) {
+        return;
+    }
+    if (l.pHead == p && l.pTail == p) {
+        l.pHead = l.pTail = NULL;
+        return;
+    } else {
+        if (l.pHead == p) {
+            l.pHead = l.pHead->pNext;
+            l.pHead->pPrev = NULL;
+            p->pNext = NULL;
+            return;
+        } else if (l.pTail == p) {
+            l.pTail = l.pTail->pPrev;
+            l.pTail->pNext = NULL;
+            p->pPrev = NULL;
+            return;
+        } else {
+            node_double *next_p = p->pNext;
+            node_double *prev_p = p->pPrev;
+            next_p->pPrev = prev_p;
+            prev_p->pNext = next_p;
+            p->pNext = p->pPrev = NULL;
+        }
+    }
+}
+
+void tachNode_single(LIST_single &l, node_single *p)
+{
+    if (l.pHead == NULL) {
+        return;
+    }
+    if (l.pHead == p && l.pTail == p) {
+        l.pHead = l.pTail = NULL;
+    } else {
+        if (l.pHead == p) {
+            l.pHead = l.pHead->pNext;
+            p->pNext = NULL;
+        } else {
+            node_single *q = l.pHead;
+            while (q != p) {
+                q = q->pNext;
+            }
+            if (l.pTail == p) {
+                q->pNext = NULL;
+                l.pTail = q;
+            } else {
+                q->pNext = p->pNext;
+                p->pNext = NULL;
+            }
+        }
+    }
+}
 
 // Bước 7: Giải phóng danh sách liên kết
 void GiaiPhong_double(LIST_double &l)

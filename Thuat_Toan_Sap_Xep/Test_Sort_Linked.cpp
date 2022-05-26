@@ -14,8 +14,8 @@ using namespace std;
     
 int main()
 {
-    //toolTestSort_Double_Linked(InsertionSort_Double_Linked, 100, 100, 200, -500, 500);
-    toolTestSort_Single_Linked(InsertionSort_Single_Linked, 1000, 100, 200, -500, 500);
+    //toolTestSort_Double_Linked(InsertionSort_Double_Linked1, 100, 100, 200, -500, 500);
+    //toolTestSort_Single_Linked(InsertionSort_Single_Linked1, 1000, 100, 200, -500, 500);
     
     cout << "\n+++++DONE+++++" << endl;
     

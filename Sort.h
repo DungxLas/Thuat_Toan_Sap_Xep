@@ -266,16 +266,33 @@ void InsertionSort2(T *m, int n, bool kieusapxep = true) //Sap xep tang //Vs man
     }
 }
 
-//Sap xep tang
-void InsertionSort_Double_Linked(LIST_double l, bool saptang = true) //true la tang //Vs danh sach lien ket doi
+void InsertionSort_Double_Linked1(LIST_double l, bool saptang = true) //true la tang //Vs danh sach lien ket doi
 {
     for (node_double *i = l.pHead->pNext; i != NULL; i = i->pNext) { //Duyet tu vi tri ngay sau pHead den ngay truoc pTail
         int x = i->data;
         
-        node_double *j = i->pRev;
+        node_double *j = i->pPrev;
         while (j != NULL && (saptang == true ? x < j->data : x > j->data)) {
             j->pNext->data = j->data;
-            j = j->pRev;
+            j = j->pPrev;
+        }
+        if (j != NULL) {
+            j->pNext->data = x;
+        } else {
+            l.pHead->data = x;
+        }
+    }
+}
+
+void InsertionSort_Double_Linked2(LIST_double l, bool saptang = true) //true la tang //Vs danh sach lien ket doi
+{
+    for (node_double *i = l.pHead->pNext; i != NULL; i = i->pNext) { //Duyet tu vi tri ngay sau pHead den ngay truoc pTail
+        int x = i->data;
+        
+        node_double *j = i->pPrev;
+        while (j != NULL && (saptang == true ? x < j->data : x > j->data)) {
+            j->pNext->data = j->data;
+            j = j->pPrev;
         }
         if (j != NULL) {
             j->pNext->data = x;
@@ -291,10 +308,11 @@ void InsertionSort_Single_Linked(LIST_single l, bool saptang = true) //Sap xep t
         int x = i->data;
         
         for (node_single *j = l.pHead; j != i; j = j->pNext) {
-            if (x <= j->data) {
+            if (saptang == true ? x <= j->data : x >= j->data) {
                 int y = j->data;
+                int z;
                 for (node_single *k = j->pNext; k != i->pNext; k = k->pNext) {
-                    int z = k->data;
+                    z = k->data;
                     k->data = y;
                     y = z;
                 }
