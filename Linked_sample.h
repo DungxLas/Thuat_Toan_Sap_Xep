@@ -226,9 +226,11 @@ void tachNode_single(LIST_single &l, node_single *p)
             l.pHead = l.pHead->pNext;
             p->pNext = NULL;
         } else {
-            node_single *q = l.pHead;
-            while (q != p) {
-                q = q->pNext;
+            node_single *q = NULL;
+            node_single *k = l.pHead;
+            while (k != p) {
+                q = k;
+                k = k->pNext;
             }
             if (l.pTail == p) {
                 q->pNext = NULL;
@@ -239,6 +241,31 @@ void tachNode_single(LIST_single &l, node_single *p)
             }
         }
     }
+}
+
+    //Them node p vao sau node q trong danh sach l
+void themNode_double(LIST_double &l, node_double *p, node_double *q)
+{
+    if (q == l.pTail) {
+        addTail_double(l, p);
+        return;
+    }
+    node_double *k = q->pNext;
+    p->pNext = k;
+    q->pNext = p;
+    p->pPrev = q;
+    k->pPrev = p;
+}
+
+void themNode_single(LIST_single &l, node_single *p, node_single *q)
+{
+    if (q == l.pTail) {
+        addTail_single(l, p);
+        return;
+    }
+    node_single *k = q->pNext;
+    p->pNext = k;
+    q->pNext = p;
 }
 
 // Bước 7: Giải phóng danh sách liên kết

@@ -82,7 +82,7 @@ void toolTestSort_array(void (*thuatToanSapxep)(T*, int, bool), int soTestCase, 
 //Chi kiem tra sap xep tang
 //Khoang radom so luong phan tu n ||nMin -> nMax||
 template <class T>
-void toolTestSort_Double_Linked(void (*thuatToanSapxep)(LIST_double, bool), int soTestCase, int nMin, int nMax, T resMin, T resMax)
+void toolTestSort_Double_Linked(void (*thuatToanSapxep)(LIST_double&, bool), int soTestCase, int nMin, int nMax, T resMin, T resMax)
 {
     srand(time(NULL));
     for (int k = 0; k < soTestCase; ++k) {
@@ -143,7 +143,7 @@ void toolTestSort_Double_Linked(void (*thuatToanSapxep)(LIST_double, bool), int 
 }
 
 template <class T>
-void toolTestSort_Single_Linked(void (*thuatToanSapxep)(LIST_single, bool), int soTestCase, int nMin, int nMax, T resMin, T resMax)
+void toolTestSort_Single_Linked(void (*thuatToanSapxep)(LIST_single&, bool), int soTestCase, int nMin, int nMax, T resMin, T resMax)
 {
     srand(time(NULL));
     for (int k = 0; k < soTestCase; ++k) {
