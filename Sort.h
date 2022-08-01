@@ -337,19 +337,42 @@ void InsertionSort_Single_Linked2(LIST_single &l, bool saptang = true) //Sap xep
             pre_j = j;
             j =j->pNext;
         }
-        if (j == l.pHead) {
-            tachNode_single(l, i);
-            addHead_single(l, i);
-        } else if (j == i) {
+        if (j == i) {
             pre_i = pre_i->pNext;
             i = i->pNext;
             continue;
+        }
+        tachNode_single(l, i, pre_i);
+        if (j == l.pHead) {
+            addHead_single(l, i);
         } else {
-            tachNode_single(l, i);
             themNode_single(l, i, pre_j);
         }
-        //pre_i
+        //pre_i = i
         i = pre_i->pNext;
+    }
+}
+
+void InsertionSort_Single_Linked2_CaiTien(LIST_single &l, bool saptang = true) //Sap xep tang //Vs danh sach lien ket don
+{
+    node_single *i = l.pHead;
+    while (i != l.pTail) {
+        node_single *next_i = i->pNext;
+        if (saptang == true ? i->pNext->data <= l.pHead->data : i->pNext->data >= l.pHead->data) {
+            tachNode_single(l, next_i, i);
+            addHead_single(l, next_i);
+            continue;
+        }
+        node_single *j = l.pHead;
+        while (j != i && (saptang == true ? next_i->data >= j->pNext->data : next_i->data <= j->pNext->data)) {
+            j =j->pNext;
+        }
+        if (j == i) {
+            i = i->pNext;
+            continue;
+        }
+        tachNode_single(l, next_i, i);
+        themNode_single(l, next_i, j);
     }
 }
 

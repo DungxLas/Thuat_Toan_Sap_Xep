@@ -184,7 +184,7 @@ void outPut_single(LIST_single l)
 }
 
 // Bước 6: Các thao tác
-    // Tach node trong danh sach
+    // Tach node p trong danh sach
 void tachNode_double(LIST_double &l, node_double *p)
 {
     if (l.pHead == NULL) {
@@ -213,8 +213,8 @@ void tachNode_double(LIST_double &l, node_double *p)
         }
     }
 }
-
-void tachNode_single(LIST_single &l, node_single *p)
+    // Tach node p sau node q trong danh sach
+void tachNode_single(LIST_single &l, node_single *p, node_single *q)
 {
     if (l.pHead == NULL) {
         return;
@@ -226,12 +226,6 @@ void tachNode_single(LIST_single &l, node_single *p)
             l.pHead = l.pHead->pNext;
             p->pNext = NULL;
         } else {
-            node_single *q = NULL;
-            node_single *k = l.pHead;
-            while (k != p) {
-                q = k;
-                k = k->pNext;
-            }
             if (l.pTail == p) {
                 q->pNext = NULL;
                 l.pTail = q;

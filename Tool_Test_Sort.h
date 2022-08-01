@@ -98,17 +98,14 @@ void toolTestSort_Double_Linked(void (*thuatToanSapxep)(LIST_double&, bool), int
             node_double *p = getNode_double(res);
             addTail_double(l, p);
         }
-        //cout << "\nDanh sach tu tao: ";
-        //outPut(l);
+        
+//        cout << "\nDanh sach tu tao: ";
+//        outPut_double(l);
         
         list<T> ketquachinhxac;
         for (node_double *p = l.pHead; p != NULL; p = p->pNext) {
             ketquachinhxac.push_back(p->data);
         }
-        //cout << "\nDanh sanh may tao: ";
-        //for (list<int>::iterator it = ketquachinhxac.begin(); it != ketquachinhxac.end(); ++it) {
-        //    cout << *it << "    ";
-        //}
         
         thuatToanSapxep(l, true);
         ketquachinhxac.sort();
@@ -159,17 +156,13 @@ void toolTestSort_Single_Linked(void (*thuatToanSapxep)(LIST_single&, bool), int
             node_single *p = getNode_single(res);
             addTail_single(l, p);
         }
-        //cout << "\nDanh sach tu tao: ";
-        //outPut(l);
+//        cout << "\nDanh sach tu tao: ";
+//        outPut_single(l);
         
         list<T> ketquachinhxac;
         for (node_single *p = l.pHead; p != NULL; p = p->pNext) {
             ketquachinhxac.push_back(p->data);
         }
-        //cout << "\nDanh sanh may tao: ";
-        //for (list<int>::iterator it = ketquachinhxac.begin(); it != ketquachinhxac.end(); ++it) {
-        //    cout << *it << "    ";
-        //}
         
         thuatToanSapxep(l, true);
         ketquachinhxac.sort();
